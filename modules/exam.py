@@ -2,7 +2,7 @@ from ConfigParser import SafeConfigParser
 import os
 import errno
 
-__author__ = 'lary'
+__author__ = 'lazToum'
 
 
 class Exam:

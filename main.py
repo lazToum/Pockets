@@ -4,7 +4,6 @@ import os
 import sys
 from ConfigParser import SafeConfigParser
 from PySide import QtGui
-
 import modules.class_tab as class_tab
 import modules.client_tab as client_tab
 import modules.logs_tab as logs_tab
@@ -13,7 +12,6 @@ import modules.settings_window as settings_window
 from PySide.QtCore import QFileSystemWatcher, Slot
 from PySide.QtGui import QTabWidget, QMenuBar, QMainWindow
 from modules.logs import Log
-
 from modules import server_settings_tab
 
 __author__ = 'lazToum'

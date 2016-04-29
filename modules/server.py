@@ -9,6 +9,8 @@ import select
 import time
 from exam import Exam
 
+__author__ = 'lazToum'
+
 
 def get_exam(server_type):
     parser = SafeConfigParser()
