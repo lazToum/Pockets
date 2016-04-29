@@ -1,0 +1,4 @@
+MasterUDP server started  
+ 
+ ___#___ | _Reg Id_ | _______Client's IP:PORT_______ | _______Server's IP:PORT_______ | ___________TimeStamp___________ | ____Hostname____ | ____Message Received____ | ______Message Sent_______
+
