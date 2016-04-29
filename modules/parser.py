@@ -1,4 +1,3 @@
-import sys
 from ConfigParser import SafeConfigParser
 from random import randint
 

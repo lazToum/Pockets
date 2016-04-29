@@ -130,7 +130,6 @@ class ServerSettings(QWidget):
             self.start_master_button.setStyleSheet('QPushButton {color: green;}')
             # server = MasterUDP(False)
             server.stop()
-            # TODO
 
     @Slot()
     def start_first_tcp_server(self):

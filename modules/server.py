@@ -7,7 +7,6 @@ import socket
 import sys
 import select
 import time
-import math
 from exam import Exam
 
 
@@ -22,14 +21,18 @@ def get_exam(server_type):
 
 
 def clear_log(exam_settings):
-    with open('logs/' + exam_settings['class_day'] + '/' + exam_settings['class_hours'] + '/' +
-              exam_settings['exam_part'] + exam_settings['server_type'] + 'Log.txt', 'wb') as log_file:
+    with open(
+        'logs/' + exam_settings['class_day'] + '/' + exam_settings['class_hours'] + '/' +
+        exam_settings['exam_part'] + exam_settings['server_type'] + 'Log.txt', 'wb'
+    ) as log_file:
         log_file.write('')
 
 
 def write_log(exam_settings, text):
-    with open('logs/' + exam_settings['class_day'] + '/' + exam_settings['class_hours'] + '/' +
-              exam_settings['exam_part'] + exam_settings['server_type'] + 'Log.txt', 'ab') as log_file:
+    with open(
+        'logs/' + exam_settings['class_day'] + '/' + exam_settings['class_hours'] + '/' +
+        exam_settings['exam_part'] + exam_settings['server_type'] + 'Log.txt', 'ab'
+    ) as log_file:
         log_file.write(text)
 
 
@@ -46,7 +49,8 @@ def servers_standard_format(server_type, servers_data=None):
         servers_format = ' ' * 87 + ' | ' + '(' + time.ctime() + ') ' + servers_data[0]
     else:
         servers_format = '{:_^7} | {:_^8} | {:_^29} | {:_^29} | {:_^34} | {:_^15} | {:_^25} | {:_^24}'.format(
-            servers_data[0], servers_data[1], servers_data[2] + ':' + servers_data[3], servers_data[4] + ':' + servers_data[5],
+            servers_data[0], servers_data[1], servers_data[2] + ':' + servers_data[3],
+            servers_data[4] + ':' + servers_data[5],
             time.ctime(), servers_data[6], servers_data[7], servers_data[8])
     return servers_format + '\n'
 
@@ -221,7 +225,8 @@ class TCPThread(QThread):
                 sock_lst[-1].setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
                 sock_lst[-1].bind((host, item))
                 sock_lst[-1].listen(backlog)
-        except socket.error, (value, message):
+        # except socket.error, (value, message):
+        except socket.error:
             if sock_lst[-1]:
                 sock_lst[-1].close()
                 # sock_lst = sock_lst[:-1]
@@ -308,7 +313,7 @@ class UDP(QObject):
 
 class UDPThread(QThread):
     def __init__(self, ports, parent=None):
-        self .running = True
+        self.running = True
         parser = SafeConfigParser()
         parser.read('settings.ini')
         self.master_printer_name = '127.0.0.1'
@@ -339,7 +344,8 @@ class UDPThread(QThread):
                 sock_lst.append(socket.socket(socket.AF_INET, socket.SOCK_DGRAM))
                 sock_lst[-1].setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
                 sock_lst[-1].bind((host, item))
-        except socket.error, (value, message):
+        # except socket.error, (value, message):
+        except socket.error:
             if sock_lst[-1]:
                 sock_lst[-1].close()
                 # sock_lst = sock_lst[:-1]

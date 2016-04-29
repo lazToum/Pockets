@@ -5,7 +5,7 @@ import errno
 __author__ = 'lary'
 
 
-class Exam():
+class Exam:
     def __init__(self):
         parser = SafeConfigParser()
         parser.read('settings.ini')

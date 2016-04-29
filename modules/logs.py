@@ -23,4 +23,3 @@ class Log(QWidget):
         with open(path) as fopen:
             data = fopen.read()
         self.console.setPlainText(data)
-        print data

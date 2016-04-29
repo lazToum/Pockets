@@ -1,6 +1,5 @@
 from ConfigParser import SafeConfigParser
-import os
-from PySide import QtGui, QtCore
+from PySide import QtCore
 from PySide.QtCore import Slot
 from PySide.QtGui import QWidget, QVBoxLayout, QComboBox, QGridLayout, QLabel, QLineEdit, QPushButton
 

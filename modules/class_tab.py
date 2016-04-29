@@ -1,6 +1,6 @@
-import exam
-import os
-import sys
+# import exam
+# import os
+# import sys
 from ConfigParser import SafeConfigParser
 from PySide import QtCore, QtGui
 from PySide.QtCore import *
